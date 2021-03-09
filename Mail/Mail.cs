@@ -49,19 +49,26 @@ namespace MainMail
 
         private static void OrderParcel()
         {
-            Console.WriteLine("Enter name of parcel");
-            string name = Console.ReadLine();
+            try
+            {
+                Console.WriteLine("Enter name of parcel");
+                string name = Console.ReadLine();
 
-            Console.WriteLine("Enter volume of parcel");
-            float volume = float.Parse(Console.ReadLine());
+                Console.WriteLine("Enter volume of parcel");
+                float volume = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter price of parcel");
-            float price = float.Parse(Console.ReadLine());
+                Console.WriteLine("Enter price of parcel");
+                float price = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter identify of parcel");
-            int identify = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter identify of parcel");
+                int identify = Convert.ToInt32(Console.ReadLine());
 
-            parcels.Add(new Parcel(name, volume, price, identify));
+                parcels.Add(new Parcel(name, volume, price, identify));
+            }
+            catch
+            {
+                Console.WriteLine("Please enter correct format");
+            }
         }
 
         private static void InfoParcels()
